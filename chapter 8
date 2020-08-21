@@ -87,10 +87,20 @@ Keyword Arguments
         _____________________________________
         This function call would have the same output as the previous example.The only argeument provided is 'willie',so it is matched up with the first parameter in the definition, pet_name.Because no argument is provided for animal_type, Python uses the default value 'dog'.
         To describe an animal other than a dog, you could use a function call like this:
-        
+        ————————————————————————————————————————————————————————
         describe_pet(pet_name = 'willie', animal_type = 'hamster')
+        ————————————————————————————————————————————————————————
         
-        
+        Because an explicit argument for animal_type is provided, Python will ignore the parameter's default value
+NOTE:   when you use default values, any parameter with a default value needs to be listed after all the parameteres that dont have default values.This allows Python to continue interpreting positional arugments correctly
+
+Equivalent Function Calls
+        Because postional argumenmts, keyword arguments, and default values can all be used together, ofent you will have several equivalent ways to call a function. Consider the following definition for describe_pets() with one default value provided:
+       ________________________________________________________
+       def describe_pet(pet_name, animal_type = 'dog'):
+       ————————————————————————————————————————————————————————
+        with this definition, an argument always needs to be provided for pet_name, and this value can be provided using the positional or keyword format. If the animal being described
+
         
         
        
