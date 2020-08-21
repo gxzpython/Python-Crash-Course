@@ -123,6 +123,12 @@ Equivalent Function Calls
                 print("\nI have a " + animal_type +".")
                 print("MY " + animal_type +"'s name is " + pet_name.title() +".")
         describe_pet()
+        ————————————————————————————————————————————————————————
+        Python recoginizes that some information is missing from the function call, and the traceback teslls us that :
+        ————————————————————————————————————————————————————————
+        Type Error:sescribe_pet() missing 2 required positional arguments:'animal_type' and 'pet_name'
+        ————————————————————————————————————————————————————————
+        At the traceback tells us the location of the problem, allowing us to look backand see that something went wrong in our function call. At
      
   
    
