@@ -112,10 +112,19 @@ Equivalent Function Calls
         describe_pet(pet_name='hamster',pet_name='harry')
         ————————————————————————————————————————————————————————
         
-        
-        
-       
-        
+        each of these function calls woul have the same output as the previous examples.
+ Note: It dosen't really matter whihc calling style you use. As long as your function calls produce the output you want,just use the syle you find easiest to understand.
+ 
+ Avoid Argument Errors.
+        When you start to use functions, don't be suprrised if you encounter erros about unmatched arguments. Unmatched arguments occur when you provide fewer or more arguments than a function needs to do its work. For example, here's what happens if we try to call describe_pet()within no arguments:
+        ————————————————————————————————————————————————————————
+        def describe_pet(pet_name, animal_type='dog'):
+                """Display information about a pet"""
+                print("\nI have a " + animal_type +".")
+                print("MY " + animal_type +"'s name is " + pet_name.title() +".")
+        describe_pet()
+     
+  
    
                     
 
