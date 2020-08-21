@@ -80,9 +80,23 @@ Keyword Arguments
         I have a dog
         My dog's name is Willie
         _____
+        Note that the order of the parameter in the function defination has been changed. Because the default value makest it unneccessary to specify a type of animal as an argument, the only argument left in the function call is the pet's name. Python still interprets this as a positional argument, so if the first parameter listedin the function's defination. this is the reson the first parameter needs to be pet_name.
+        this simplest way to use the function now is to provide just a dog's name in the function call:
+        ___________________________________
+        describe_pet('willie')
+        _____________________________________
+        This function call would have the same output as the previous example.The only argeument provided is 'willie',so it is matched up with the first parameter in the definition, pet_name.Because no argument is provided for animal_type, Python uses the default value 'dog'.
+        To describe an animal other than a dog, you could use a function call like this:
+        
+        describe_pet(pet_name = 'willie', animal_type = 'hamster')
+        
+        
+        
+        
+       
         
    
-                
+                    
 
 
         
