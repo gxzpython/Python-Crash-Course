@@ -99,8 +99,19 @@ Equivalent Function Calls
        ________________________________________________________
        def describe_pet(pet_name, animal_type = 'dog'):
        ————————————————————————————————————————————————————————
-        with this definition, an argument always needs to be provided for pet_name, and this value can be provided using the positional or keyword format. If the animal being described
-
+        with this definition, an argument always needs to be provided for pet_name, and this value can be provided using the positional or keyword format. If the animal being described is not a dog, an argument for animal_type must be included in the call, and this argument can also be specified using the positional or keyword format.
+        all of the follwoing clals would work for this function:
+        ————————————————————————————————————————————————————————
+        #A dog named Willie.
+        describe_pet('Willie')
+        describe_pet(pet_name='willie')
+        
+        #A hamster named Harry.
+        describe_pet('harry','hamster')
+        desceibe_pet(pet_name='harry', animal_type ='hamster')
+        describe_pet(pet_name='hamster',pet_name='harry')
+        ————————————————————————————————————————————————————————
+        
         
         
        
