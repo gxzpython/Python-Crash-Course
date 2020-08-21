@@ -1,4 +1,98 @@
 8.2.1 位置实参  
   你调用函数时，Python必须将函数调用中的每个实参豆关联到函数定义中的一个形参。为此最简单的关联方式是技术实参的顺序。这种关联方式被称为位置实参
   为明白其中的工作原理，来看一个显示宠物信息的函数。这个函数指出一个宠物属于哪种动物以及它叫什么名字，如下所示：
-  
+ pets.py
+ _________________________________________
+ def describe_pet(animal_type,pet_name):
+    """显示宠物的信息"""
+    print("\nI have a " + animal_type + ".")
+    print("My" + animal_type + "'s nameis ” +pet_name.title() + ".")
+ describe_pet('hamster','harry')
+ ---——————————————————————————————————————————
+ 这个函数定义表明，他需要一种动物类型和一个名字。调用describe_pet()时，需要按顺序提供一种动物类型和动物名字。例如，在前面的函数调用中，实参‘hamster'存储在形参animal_type中，而实参'harry'存储在形参pet_name中。在函数体内，使用了这两个形参来显示宠物的信息。
+   输出描述了一支名为Harry的仓鼠：
+   —————————————————————————————
+   I have a hamster.
+   My hamster's name is Harry
+   ______________________________
+ 1.调用函数多次
+ 你可以根据需要调用函数任意次。再要描述一个宠物，只需要再次调用describe_pet()即可：
+  _________________________________________
+ def describe_pet(animal_type,pet_name):
+    """显示宠物的信息"""
+    print("\nI have a " + animal_type + ".")
+    print("My" + animal_type + "'s nameis ” +pet_name.title() + ".")
+ describe_pet('hamster','harry')
+ describe_pet('dog','willie')
+ ---——————————————————————————————————————————
+ 第二次调用describe_pet()函数时，我们向他传递了实参’dog'和‘willie'.与第一次调用时一样，Python将实参’dog'关联到animal_type,并将实参‘willie'关联到形参pet_name.与前面一样，这个函数完成其任务，但是打印的是一条名为willie的小狗的信息。至此，我们有一只名为Harry的仓鼠，还有一条名为Willie的小狗。
+ ————————————————————————————————————————————————
+ I have a hamster.
+ My hamster's name is Harry
+ 
+ I have a dog
+ My dog's name is Willie
+ ___________________________________________
+ 
+        调用函数多次是一种效率极高的工作方式。我们只需要在函数中编写描述宠物的代码一次，然后每当需要描述新宠物时，都可以调用这个函数，并向他提供宠物的信息。即便描述宠物的代码增加到了十行，你依然只需要使用一行调用函数的代码，就可以描述一个新宠物。
+        在函数中，可根据需要使用任意数量的位置实参，Python将按顺序将函数调用中的实参关联到函数定义中相应的形参
+2.w位置实参的顺序很重要
+        使用位置实参来调用函数是，如果实参的顺序不正确，结果可能出乎意料：
+        ————————————————————————————————————————————————————————
+        def describe_pet(animal_type,pet_name):
+                """显示宠物信息“”“
+                print(”\nI have a " + animal_type +".")
+                print("My" + animal_type +"'s name is" +animal_name)
+        describe_pet('harry','hamster')
+        ————————————————————————————————————————————————————————
+        这个函数调用中，我们先指定名字，在指定动物类型。由于实参’harry‘在前，这个值将存储到形参animal_type里面去；同理，’hamster将存储到形参pet_name当中去。结果是我们得到了一个名为Hamster的harry;
+        _________________________________________________________
+        I have a harry.
+        My harry's name is Hamster.
+        _________________________________________________________
+        
+        If you get funny result like this, check to make sure the order of arguments in your function call matches the order of parameters in function's defination
+
+Keyword Arguments
+        A keyword argument is a name-value pair that you pass to a function. You directly associate the name and the value within the argument, so when you directly associate the name and the value within the argument, so when you pass the argument to the function, there's no confusion(you won't end up with a harry named Hamster). Keyword arguments free you from having to worry about correctly ordering your arguments in the functioncall, and they clarify th role of each value in th function call
+        Let's rewrite pets.py using keyword argumens to call describe_pet():
+        ___________
+        def describe_pet(animal_type,animal_name):
+                """display information about a pet。“”“
+                print("\nI have a " + animal_type +".")
+                print("MY " + animal_type +"'s name is " + pet_name.title() +".")
+        describe_pet(animal_type ='hamster'+pet_name='harry')
+        
+ Note: when you use keyword arguments, be sure to use the exact names of the parameters in the function definitions.
+ 
+ Default Values
+        when writing a function, you can define a default value for each parameter.If an argument for a parameteris provided in the function call. Python uses the argument value. If not, it uses the parameter;s default value. So when you define a default value for a parameter, you can exclude the corresponding argument you'd usually wirte in the function call. Using default values can simplify you function calls and clarify the wyasin which your functions are typically used.
+        For example, if you notice the most of the calls to describe_pet() are being used to describe dogs, you can set the default value of animal_type to 'dog' Now anyone calling describe_pet() for a dog omit that information:
+        ______
+        def describe_pet(pet_name, animal_type='dog'):
+                """Display information about a pet"""
+                print("\nI have a " + animal_type +".")
+                print("MY " + animal_type +"'s name is " + pet_name.title() +".")
+        describe_pet(pet_name='willie')
+        We changed the defination of describe_pet() to include a default value,'dog', for animal_type. Now when the function is called with no animal_type specified, Python knows to use the value 'dog' for this parameter:
+        ___
+        
+        I have a dog
+        My dog's name is Willie
+        _____
+        
+   
+                
+
+
+        
+        
+        
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
