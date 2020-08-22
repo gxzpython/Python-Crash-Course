@@ -126,9 +126,20 @@ Equivalent Function Calls
         ————————————————————————————————————————————————————————
         Python recoginizes that some information is missing from the function call, and the traceback teslls us that :
         ————————————————————————————————————————————————————————
+        Traceback(most recent call last):
+                File 'pets.py', line 6 in <module>
+                describe_pet()
+       
         Type Error:sescribe_pet() missing 2 required positional arguments:'animal_type' and 'pet_name'
         ————————————————————————————————————————————————————————
-        At the traceback tells us the location of the problem, allowing us to look backand see that something went wrong in our function call. At
+        At the traceback tells us the location of the problem, allowing us to look backand see that something went wrong in our function call. At second the offending function call is written out for us to see. At the traceback 3 tells us the call is missing two arguments and reports the names of the missing arguments. If this function were in separate file,we could probably rewrite the call correctly without having to open that file and read the function code.
+        Python is helpful in tha it reads the function's code for us and tells us the names of the arguments we need to provide. Thi is naother motivation for giving your variables and functions descriptive names. If you do,Python's error messages will be more useful to you and anymone else who might use your code
+        If you provide too many arguments, you should get a similar traceback that can help you correctly match your function call to the function definition.
+        
+        
+        
+Return Values
+         A function doesn't always have to display its out put directly. Instead, it  can process some data and return a value or set of values. The value the function returns is called a return value.The return statement takes a value from inside a function and sends it back to the line that called the function. Return values allow you move much of your program's grunt work into functions, which can simplify the body of your program.      
      
   
    
