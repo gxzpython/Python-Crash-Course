@@ -131,7 +131,7 @@ Equivalent Function Calls
                 describe_pet()
        
         Type Error:sescribe_pet() missing 2 required positional arguments:'animal_type' and 'pet_name'
-        ————————————————————————————————————————————————————————
+        ————————————————————————————————————————————————————————        
         At the traceback tells us the location of the problem, allowing us to look backand see that something went wrong in our function call. At second the offending function call is written out for us to see. At the traceback 3 tells us the call is missing two arguments and reports the names of the missing arguments. If this function were in separate file,we could probably rewrite the call correctly without having to open that file and read the function code.
         Python is helpful in tha it reads the function's code for us and tells us the names of the arguments we need to provide. Thi is naother motivation for giving your variables and functions descriptive names. If you do,Python's error messages will be more useful to you and anymone else who might use your code
         If you provide too many arguments, you should get a similar traceback that can help you correctly match your function call to the function definition.
@@ -149,8 +149,38 @@ Retuning a Simple Value
                 retrun full_name.title()
         musician = get_formatted_name('jimi','hedrix')
         print(musician)
-  
-   
+        ————————————————————————————————————————————————————————————————————————————————————
+       The definition of get_formatted_name() takes as parameters a first and last name, The function combines these two names, adds a space between them, and stores the result in full_name.The value of full_name is converted to title case, and then retruned to the calling line at retrun
+       when you call a function that returns a value, you need to provide a variable where the return valu can be stored. In this case, the returned value is stored in the variable musician at 4. the out put shows a neatly formatted name mad up of the parts of a person's name.
+       ————————————————————————————————————————————————————————————————————————————————————
+       Jimi Hendrix
+       ————————————————————————————————————————————————————————————————————————————————————
+       This might seem like a lot of work to get a neatly formatted name when we could have just written:
+       ————————————————————————————————————————————————————————————————————————————————————
+       print('Jimi Hendrix')
+       ————————————————————————————————————————————————————————————————————————————————————
+       But when you consider working with a large program that needs to store many first and last names seperately, functions like get_formatted_name() become very useful. You store first and last names separately and then call thsi function whenever you want to display a full name.
+
+Making an Argument Optional
+      Sometimes it makes sensse to make an argument optional so that people using the function can chose to provide extra information only if they want to. You can use defualt values to make an arguemnt optional.
+      For example, say we want to expand get_formatted_name() to handle midlle names as well. A first attempt to include middle names might look like this:
+      ————————————————————————————————————————————————————————————————————————————————————
+      def get_fromatte_name(first_name,middle_name,last_name):
+        ""Return a full name, neatly formatted"
+        full_name = first_name +' '+middle_name+''+ last_name
+        return full_name.title()
+      musician = get_formatted_name('john','lee','hooker')
+      print(musician)
+      ————————————————————————————————————————————————————————————————————————————————————
+     
+      This function works when given a first, middle, and last name. The function takes in all three parts of a name and then builds a string out of them. The function adds spaces where appropriate and converts the full name to title case:
+      ————————————————————————————————————————————————————————————————————————————————————
+      John Lee Hooker
+      ————————————————————————————————————————————————————————————————————————————————————
+      But Middle names aren't always needed, and this function as written would not work if you tried to call it with only a first name and a last name. To make the middle name optional, we can give the middle_name argument an empty default valueand ignore the argments unless the user prvides a value. To make get_formatted_name() work witouth a middle name, we set the default value of middle_name to an empty string and move it to the end of the list of parameters:
+      ————————————————————————————————————————————————————————————————————————————————————
+      1 def get_formatted_name(first_name,last_name,middle_name=''):
+      2                 
                     
 
 
