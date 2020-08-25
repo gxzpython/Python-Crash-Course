@@ -179,9 +179,23 @@ Making an Argument Optional
       ————————————————————————————————————————————————————————————————————————————————————
       But Middle names aren't always needed, and this function as written would not work if you tried to call it with only a first name and a last name. To make the middle name optional, we can give the middle_name argument an empty default valueand ignore the argments unless the user prvides a value. To make get_formatted_name() work witouth a middle name, we set the default value of middle_name to an empty string and move it to the end of the list of parameters:
       ————————————————————————————————————————————————————————————————————————————————————
-      1 def get_formatted_name(first_name,last_name,middle_name=''):
-      2                 
-                    
+      1def get_fromatte_name(first_name,middle_name,last_name):
+        ""Return a full name, neatly formatted"
+        if middle_name:
+                full_name = first_name +' '+middle_name+''+ last_name
+        else:
+                full_name = first_name +''+ last_name
+       
+        return full_name.title()
+               
+      musician = get_formatted_name('john','lee','hooker')
+      print(musician)
+      musician = get_formatted_name('john','hooker')
+      print(musician)
+      
+      ————————————————————————————————————————————————————————————————————————————————————  
+        in this example, the name is built from three possible parts. Because there's always a frist and last name, these paratmeters are listed first in the function's definition. The middle name is optional, so its listed last in the definition, and its default value is an empty sting.
+        in the body of the funciton, we check to see if a middle name has been provided. Pythong interprets non-empty strings as True, so if middle_name evaluates to True if amiddle name argument is in the function call 2. If a middle name is provided, the first, middle and last names are combined to forma full name. This name is then changed to title case and returned to the function callline where its stored in the varaible musician and printed. If no middle name is prvided, the empty sting fails the if test
 
 
         
