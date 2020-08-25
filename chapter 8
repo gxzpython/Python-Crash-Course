@@ -195,10 +195,16 @@ Making an Argument Optional
       
       ————————————————————————————————————————————————————————————————————————————————————  
         in this example, the name is built from three possible parts. Because there's always a frist and last name, these paratmeters are listed first in the function's definition. The middle name is optional, so its listed last in the definition, and its default value is an empty sting.
-        in the body of the funciton, we check to see if a middle name has been provided. Pythong interprets non-empty strings as True, so if middle_name evaluates to True if amiddle name argument is in the function call 2. If a middle name is provided, the first, middle and last names are combined to forma full name. This name is then changed to title case and returned to the function callline where its stored in the varaible musician and printed. If no middle name is prvided, the empty sting fails the if test
-
-
-        
+        in the body of the funciton, we check to see if a middle name has been provided. Pythong interprets non-empty strings as True, so if middle_name evaluates to True if amiddle name argument is in the function call 2. If a middle name is provided, the first, middle and last names are combined to forma full name. This name is then changed to title case and returned to the function callline where its stored in the varaible musician and printed. If no middle name is prvided, the empty sting fails the if test and teh else block runs3. The full name is made with just a first and last name, and he formatted name is retruned to the claling line where its stored in musician and printed.
+        Calling this function with a frist and last name is straightforward. If we are using a middle name, however we have to make sure the middle name is the last argument passed so Python will match up the positional arguments correctly.
+        This modified version of our function works for people with just a first name and last name, and it works for people who have a middle name as well:
+        ————————————————————————————————————————————————————————————————————————————————————
+        John  Hooker
+        John Lee Hooker
+        ————————————————————————————————————————————————————————————————————————————————————
+        Optional values allow functions to handle a wide range of use cases while letting function calls remain as simple as possible.
+Returning a Dictionary
+        A function can return any kinds of value you need it to, including more complicated data structures like lists and dictionaries. For example, the following function takes in parts of a name and returns a dictionary representing a person. 
         
         
     
