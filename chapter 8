@@ -204,7 +204,22 @@ Making an Argument Optional
         ————————————————————————————————————————————————————————————————————————————————————
         Optional values allow functions to handle a wide range of use cases while letting function calls remain as simple as possible.
 Returning a Dictionary
-        A function can return any kinds of value you need it to, including more complicated data structures like lists and dictionaries. For example, the following function takes in parts of a name and returns a dictionary representing a person. 
+        A function can return any kinds of value you need it to, including more complicated data structures like lists and dictionaries. For example, the following function takes in parts of a name and returns a dictionary representing a person.:
+        ————————————————————————————————————————————————————————————————————————————————————
+        def build_person(first_name,last_name):
+                '''Return a dictionary of information about a person"""
+                person={'first':first_name,'last':last_name)
+                return person
+        musician = build_person('jimi','hendrix')
+        print(musician)
+        The function build_person('jimi','hendrix')
+        print(musician)
+        ————————————————————————————————————————————————————————————————————————————————————
+        The function build_person() takes in a first and last name, and packs these values into a dictionary at line 1. The value of first_name is stored with the key'first', and the value of last_name is stored with teh key'last'. he entire dictionary representing the person is returned at line 2. The return value is printed at 3 with the original two pieces of textual information now stored in a dictionary:
+        ————————————————————————————————————————————————————————————————————————————————————
+       {'first':'jimi','las':'hendrix'}
+       
+              
         
         
     
